@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteration Statements</title>
+</head>
+<body>
+    <h1>Iteration Statements</h1>
+    <hr>
+    <h2>1. Find the number of digits</h2>
+    <fieldset>
+        <pre>
+    const Find_Digits = (N) => 
+    {
+    let count=0
+    while(N>0){
+    N=Math.floor(N/10);
+    count++;
+    }
+    return count;
+    };
+        </pre>
+    </fieldset>
+
+
+    <h2>2. Find the Fives.</h2>
+    <fieldset>
+        <pre>
+    const Find_Five = (N) => 
+    {
+	let count=0;
+	 while(N>0){
+	   if(N%10===5)
+	   count++;
+
+                                /* N=Math.floor(N/10); or parseInt:- this function converts decimal to int
+                                bcoz in javascript it doesnt change the datatype on its own*/
+
+	   N=parseInt(N/10);
+	 }
+	 return count;
+    };      
+        </pre>
+    </fieldset>
+
+
+    <h2>3. Find Sum</h2>
+    <fieldset>
+        <pre>
+    const findSum = (n) => {
+    let i;
+    let sum=0;
+                            
+    for(i=0; i<=n; i+=2){
+      sum+=i;                   //more optimal maybe [sum+=i;] in place of sum=sum+i;
+    }
+    return sum;
+    }; 
+
+                                /* i can start from 2 or 1 as well
+                                for(i=0; i<=n; i++) 
+                                {
+                                if(i%2===0){
+                                    sum=i+sum;
+                                }
+                                }*/   
+        </pre>
+    </fieldset>
+
+
+    <h2>4. Find the sum of the digits of a given number.</h2>
+    <fieldset>
+        <pre>
+    const Number_Sum = (N) => 
+    { 
+    let sum=0;
+                                //let i;
+	while(N>0){
+	                        //i=N%10; sum+=i;
+	  sum+=N%10;
+	  N=Math.floor(N/10);
+	}
+	return sum;
+    };     
+        </pre>
+    </fieldset>
+
+
+    <h2>5. Print the Odds.</h2>
+    <fieldset>
+        <pre>
+    const Print_Odd = (N) => 
+    {
+	for(let i=2 ; i<=N ; i++)
+	{
+	  if(i===2 || i%2!==0)
+	  {
+	  console.log(i);
+	  }
+	}
+    };     
+        </pre>
+    </fieldset>
+
+
+    <h2>6. Print the Pattern.</h2>
+    <fieldset>
+        <pre>
+    const Print_pattern = (N) => 
+    {
+  for(let i=1; i<=N; i++){
+    let star="";
+    for(let k=1; k<=i; k++){
+      star+="*";                //this thing is tricky in javascript unlike java
+      }
+      console.log(star);
+     }
+    };     
+        </pre>
+    </fieldset>
+
+
+    <h2>7. Check whether a Number is a prime or not.</h2>
+    <fieldset>
+        <pre>
+    const Prime_Check = (N) => 
+    {
+    let count=0;
+    for(let i=1; i<=N; i++){
+        if(N%i===0)
+        count++;
+    }
+	 if(count===2)              //HERE DONT GIVE (count<=2).. test case not passing
+	 return "YES";
+	 else return "NO";
+    };      
+        </pre>
+    </fieldset>
+
+
+    <h2>8. Print Numbers.</h2>
+    <fieldset>
+        <pre>
+    const printNumbers = (n) => {
+     for(let i=1; i<=n; i++){
+    console.log(i);
+    }
+    };
+
+
+                                /* to print in one line, but integers get changes to string type
+                                ask regarding this in class
+                                let str="";
+                                for(let i=1; i<=n; i++){
+                                str+=i+"";
+                                }
+                                console.log(str);*/      
+        </pre>
+    </fieldset>
+
+
+    <h2>9. Print the Table.</h2>
+    <fieldset>
+        <pre>
+    const Print_Table = (N) => 
+    {
+	for(let i=1; i<11; i++){
+	  console.log(N + " * " + i + " = " + N * i);
+	}
+    };  
+    </pre>
+    </fieldset>
+
+</body>
+</html>
